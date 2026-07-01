@@ -1,0 +1,19 @@
+---
+description: VoiceChrExtention Chrome extension coding scope, folder mapping, design sync, and anti-overwrite rules
+alwaysApply: true
+---
+
+# VoiceChrExtention Coding Rule
+
+- Default project context is VoiceChrExtention. Use `voice-chr-extension-modify` by default in new sessions unless the user explicitly names another skill/feature.
+- Use `voice-chr-extension-modify` for VoiceChrExtention work.
+- Source code lives under `src/` only; do not place implementation files at repo root except extension entry files required by Chrome (`manifest.json` may live at root or under `src/` per design — follow `docs/01-Architecture.md`).
+- Design and research docs live under `docs/`; use this as the only design source and update it whenever code changes behavior, API contracts, UI, permissions, manifest, or verification expectations.
+- Task tracking lives under `projectmanagement/voice-chr-extension-tasks.md`; update task status when starting or finishing work.
+- Pronunciation uses Free Dictionary API (`dictionaryapi.dev`) for single English words only; do not add TTS fallback, cloud TTS, or dictionary scraping unless the user explicitly expands scope.
+- Read the current file content before investigating, editing, or concluding because the user may modify files in parallel.
+- Think before coding: state assumptions, surface ambiguity, and ask before choosing between materially different interpretations.
+- Prefer the simplest change that satisfies the request; do not add abstractions, flexible options, or extra error handling unless directly required.
+- Make surgical changes only: follow existing style, avoid unrelated refactors/formatting, and remove only dead code created by your own change.
+- Work goal-first: for each implementation step, know the verification step (lint, load unpacked extension, manual selection test, or design sync check) and loop until verified or blocked.
+- Do not overwrite large blocks or resolve mismatched content silently; stop and ask when current files differ from prior context.

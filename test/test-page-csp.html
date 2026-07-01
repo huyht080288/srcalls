@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; media-src 'self'; style-src 'unsafe-inline'" />
+  <title>VoiceChrExtention CSP test</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 640px; margin: 48px auto; line-height: 1.8; font-size: 18px; }
+    h1 { font-family: system-ui, sans-serif; }
+    .hint { color: #555; font-size: 14px; font-family: system-ui, sans-serif; }
+  </style>
+</head>
+<body>
+  <h1>CSP strict test (media-src self)</h1>
+  <p class="hint">Simulates websites that block in-page audio. Select <strong>hello</strong> below.</p>
+  <p>The word <strong>hello</strong> should still play via extension iframe.</p>
+</body>
+</html>

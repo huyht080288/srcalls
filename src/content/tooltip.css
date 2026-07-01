@@ -1,0 +1,85 @@
+.vce-tooltip {
+  position: fixed;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #1a1a2e;
+  color: #f0f0f5;
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+  pointer-events: auto;
+  max-width: min(320px, calc(100vw - 16px));
+  z-index: 2147483647;
+}
+
+.vce-tooltip.vce-loading {
+  color: #c8c8d4;
+}
+
+.vce-tooltip.vce-error {
+  color: #ffb4b4;
+}
+
+.vce-ipa {
+  font-family: 'Segoe UI', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.vce-ipa.vce-muted {
+  color: #a0a0b0;
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+}
+
+.vce-play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: #2d2d44;
+  color: inherit;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.vce-play:hover:not(:disabled) {
+  background: #3d3d5c;
+}
+
+.vce-play:focus-visible {
+  outline: 2px solid #6b8cff;
+  outline-offset: 2px;
+}
+
+.vce-play:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.vce-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #4a4a66;
+  border-top-color: #a0a8ff;
+  border-radius: 50%;
+  animation: vce-spin 0.7s linear infinite;
+}
+
+@keyframes vce-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

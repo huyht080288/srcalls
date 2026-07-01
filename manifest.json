@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "VoiceChrExtention",
+  "description": "Show IPA and play pronunciation when you select an English word.",
+  "version": "0.2.1",
+  "host_permissions": [
+    "https://api.dictionaryapi.dev/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/audio/player.html", "src/audio/player.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
